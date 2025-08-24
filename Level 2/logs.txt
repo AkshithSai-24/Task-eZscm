@@ -1,0 +1,64 @@
+
+--- Use Case 1: Multiplication (Tool Call) ---
+You: What is 12 times 7?
+
+> Entering new AgentExecutor chain...
+I need to multiply two numbers.
+Action: multiply
+Action Input: {"a": 12, "b": 7}
+Observation: 84.0
+Thought: I have the result of the multiplication.
+Final Answer: 84.0
+
+> Finished chain.
+
+Assistant: 84.0
+
+--------------------------------------------------
+
+--- Use Case 2: Addition (Tool Call) ---
+You: Add 45 and 30
+
+> Entering new AgentExecutor chain...
+I need to add two numbers.
+Action: add
+Action Input: {"a": 45, "b": 30}
+Observation: 75.0
+Thought: I have the result of the addition.
+Final Answer: 75.0
+
+> Finished chain.
+
+Assistant: 75.0
+
+--------------------------------------------------
+
+--- Use Case 3: General Question (Direct LLM Answer) ---
+You: What is the capital of France?
+
+> Entering new AgentExecutor chain...
+I know the answer to this question.
+Final Answer: The capital of France is Paris.
+
+> Finished chain.
+
+Assistant: The capital of France is Paris.
+
+--------------------------------------------------
+
+--- Use Case 4: Graceful Failure (No Multi-step) ---
+You: Multiply 9 and 8, and also tell me the capital of Japan.
+
+> Entering new AgentExecutor chain...
+I need to multiply 9 and 8.
+Action: multiply
+Action Input: {"a": 9, "b": 8}
+Observation: 72.0
+Thought: I have the result of the multiplication. I will answer that part of the question.
+Final Answer: 72.0
+
+> Finished chain.
+
+Assistant: 72.0
+
+--------------------------------------------------

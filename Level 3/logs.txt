@@ -1,0 +1,90 @@
+--- Use Case 1: Translate then Multiply ---
+You: Translate 'Good Morning' into German and then multiply 5 and 6.
+
+> Entering new AgentExecutor chain...
+I need to perform two tasks: translation and multiplication. I will do the translation first.
+Action: translate_english_to_german
+Action Input: {"text": "Good Morning"}
+Observation: Guten Morgen
+Thought: Now I need to multiply 5 and 6.
+Action: multiply
+Action Input: {"a": 5, "b": 6}
+Observation: 30.0
+Thought: I have completed both tasks. I will now provide the final answer.
+Final Answer: "Good Morning" in German is "Guten Morgen", and 5 multiplied by 6 is 30.
+
+> Finished chain.
+
+Assistant: "Good Morning" in German is "Guten Morgen", and 5 multiplied by 6 is 30.
+
+--------------------------------------------------
+
+--- Use Case 2: Add then Translate ---
+You: Add 10 and 20, then translate 'Have a nice day' into German.
+
+> Entering new AgentExecutor chain...
+I need to perform two tasks: addition and translation. I will do the addition first.
+Action: add
+Action Input: {"a": 10, "b": 20}
+Observation: 30.0
+Thought: Now I need to translate 'Have a nice day' into German.
+Action: translate_english_to_german
+Action Input: {"text": "Have a nice day"}
+Observation: Ich wünsche ihnen einen schönen Tag
+Thought: I have completed both tasks. I will now provide the final answer.
+Final Answer: 10 plus 20 is 30, and 'Have a nice day' in German is 'Ich wünsche ihnen einen schönen Tag'.
+
+> Finished chain.
+
+Assistant: 10 plus 20 is 30, and 'Have a nice day' in German is 'Ich wünsche ihnen einen schönen Tag'.
+
+--------------------------------------------------
+
+--- Use Case 3: LLM Knowledge then Multiply ---
+You: Tell me the capital of Italy, then multiply 12 and 12.
+
+> Entering new AgentExecutor chain...
+I need to find the capital of Italy and then multiply 12 by 12. I know the capital of Italy is Rome. Now I need to multiply.
+Action: multiply
+Action Input: {"a": 12, "b": 12}
+Observation: 144.0
+Thought: I have all the information needed.
+Final Answer: The capital of Italy is Rome, and 12 multiplied by 12 is 144.
+
+> Finished chain.
+
+Assistant: The capital of Italy is Rome, and 12 multiplied by 12 is 144.
+
+--------------------------------------------------
+
+--- Use Case 4: Two Math Steps ---
+You: Add 2 and 2 and multiply 3 and 3.
+
+> Entering new AgentExecutor chain...
+I need to perform two separate calculations. I will start with the addition.
+Action: add
+Action Input: {"a": 2, "b": 2}
+Observation: 4.0
+Thought: Now I will perform the multiplication.
+Action: multiply
+Action Input: {"a": 3, "b": 3}
+Observation: 9.0
+Thought: I have completed both calculations.
+Final Answer: 2 plus 2 is 4, and 3 multiplied by 3 is 9.
+
+> Finished chain.
+
+Assistant: 2 plus 2 is 4, and 3 multiplied by 3 is 9.
+
+--------------------------------------------------
+
+--- Use Case 5: Single Step (LLM) ---
+You: What is the distance between Earth and Mars?
+
+> Entering new AgentExecutor chain...
+This is a factual question that I can answer directly. The distance varies greatly depending on their orbits. I will provide the range.
+Final Answer: The distance between Earth and Mars varies constantly as they orbit the sun. At their closest, they can be about 54.6 million kilometers (33.9 million miles) apart. At their farthest, they can be up to 401 million kilometers (249 million miles) apart.
+
+> Finished chain.
+
+Assistant: The distance between Earth and Mars varies constantly as they orbit the sun. At their closest, they can be about 54.6 million kilometers (33.9 million miles) apart. At their farthest, they can be up to 401 million kilometers (249 million miles) apart.
